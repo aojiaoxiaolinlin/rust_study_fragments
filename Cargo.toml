@@ -1,10 +1,16 @@
 [workspace]
-members = [ "inter_stage", "generic", "lifetime", "macro_stu", "own", "package_mod", "smart_pointer","study_clap", "trait_stu", "wgpu_stu", "uniforms", "base_stu"]
+members = [
+    "generic",
+    "lifetime",
+    "macro_stu",
+    "own",
+    "package_mod",
+    "smart_pointer",
+    "study_clap",
+    "trait_stu",
+    "base_stu",
+]
 resolver = "2"
 
 
 [workspace.dependencies]
-wgpu="0.20"
-winit="0.30"
-anyhow="1.0"
-futures="0.3"

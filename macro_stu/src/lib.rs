@@ -1,3 +1,4 @@
+/// 过程宏
 #[macro_export]
 macro_rules! my_macro {
     () => {
@@ -14,4 +15,9 @@ macro_rules! my_macro2 {
             temp_vec
         }
     };
+}
+
+// 自定义derive宏的trait
+pub trait HelloMacro {
+    fn hello_macro();
 }
