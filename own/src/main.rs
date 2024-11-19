@@ -17,7 +17,7 @@ fn main() {
         age: 1,
         name: "Hello",
     };
-    let b = a.clone();
+    let b = a;
     let a = &a as *const A;
     let b = &b as *const A;
 

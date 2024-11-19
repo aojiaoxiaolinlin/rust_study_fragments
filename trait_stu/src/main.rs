@@ -53,11 +53,11 @@ fn main() {
 }
 // 通过impl Trait返回trait，静态分发，编译器会自动推断返回类型，性能较好
 fn name() -> impl Animal {
-    let dog = Dog {
+    
+    Dog {
         name: String::from("Tommy"),
         age: 5,
-    };
-    dog
+    }
 }
 
 // 通过Box<dyn Trait>返回trait，动态分发，编译器无法推断返回类型，性能较差

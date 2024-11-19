@@ -45,7 +45,7 @@ fn recursive_show(list: &Vec<Arc<RefCell<Animal>>>, result: &mut String) {
         animal.borrow_mut().update_name();
         let mut animal = animal.clone();
         let mut make_mut = Arc::make_mut(&mut animal);
-        let get_mut = RefCell::get_mut(&mut make_mut);
+        let get_mut = RefCell::get_mut(make_mut);
         result.push_str(", ");
         match get_mut {
             Animal::Cat(cat) => result.push_str(&cat.borrow().name),

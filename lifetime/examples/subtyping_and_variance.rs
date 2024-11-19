@@ -25,7 +25,7 @@ struct Bar<'r> {
     _phantom: PhantomData<fn(&'r ())>,
 }
 
-fn bar<'short, 'long: 'static>(mut short_bar: Bar<'short>, mut long_bar: Bar<'long>) {
+fn bar<'short, 'long: 'static>(short_bar: Bar<'short>, mut long_bar: Bar<'long>) {
     // 'long是’short的子类型，所以Bar<'long>是Bar<'short>的父类型
     // short_bar = long_bar; // esrror here，父类型不能赋值给子类型
     long_bar = short_bar; // ok

@@ -2,7 +2,6 @@ extern crate proc_macro;
 
 use proc_macro::TokenStream;
 use quote::quote;
-use syn;
 use syn::DeriveInput;
 // 自定义derive宏，derive宏是自能拥有struct和enum
 #[proc_macro_derive(HelloMacro)]
