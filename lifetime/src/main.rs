@@ -1,7 +1,7 @@
 use std::fmt::Debug;
 
-fn print_it( input: impl Debug) {
-    println!( "'static value passed in is: {:?}", input );
+fn print_it(input: impl Debug) {
+    println!("'static value passed in is: {:?}", input);
 }
 #[derive(Debug)]
 struct B<'a> {
@@ -29,11 +29,15 @@ fn main() {
 }
 
 fn test() -> &'static mut A<'static> {
-    let name = B{name: b"Hello, World!"};
-    let name = Box::leak(Box::new(name));
-    let a = A{
-        name,
-        age: 18,
+    let name = B {
+        name: b"Hello, World!",
     };
+    let name = Box::leak(Box::new(name));
+    let a = A { name, age: 18 };
     Box::leak(Box::new(a))
+}
+
+#[allow(unused)]
+fn example() {
+    // return 42;
 }

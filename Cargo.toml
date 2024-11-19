@@ -9,6 +9,7 @@ members = [
     "study_clap",
     "trait_stu",
     "base_stu",
+    "concurrency",
 ]
 resolver = "2"
 

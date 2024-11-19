@@ -33,6 +33,7 @@ struct Zoo {
     // 使用impl Trait存储trait对象
     // animals2: Vec<impl Animal>, // error[E0308]: `impl Trait` not allowed outside of function and inherent method return types
 }
+
 fn main() {
     let dog = Dog {
         name: String::from("Tommy"),
@@ -49,8 +50,6 @@ fn main() {
         animal.name();
         animal.age();
     }
-
-    
 }
 // 通过impl Trait返回trait，静态分发，编译器会自动推断返回类型，性能较好
 fn name() -> impl Animal {
@@ -58,7 +57,7 @@ fn name() -> impl Animal {
         name: String::from("Tommy"),
         age: 5,
     };
-    return dog;
+    dog
 }
 
 // 通过Box<dyn Trait>返回trait，动态分发，编译器无法推断返回类型，性能较差
@@ -67,5 +66,5 @@ fn age() -> Box<dyn Animal> {
         name: String::from("Kitty"),
         age: 3,
     };
-    return Box::new(cat);
+    Box::new(cat)
 }
